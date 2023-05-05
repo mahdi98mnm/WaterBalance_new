@@ -209,32 +209,32 @@ class SoilContent :
 
         if coverd is True:
             evaporation_layer_soil_depth = soil_depth.get('evaporation_layer_covered')
-            temp_1 = (soil_water_content_of_evaporation_layer_at_previous_step + infiltration - evaporation - infiltration_to_transpiration_layer)
+            soil_water_content_of_evaporation_layer_at_current_step = (soil_water_content_of_evaporation_layer_at_previous_step + infiltration - evaporation - infiltration_to_transpiration_layer)
         else:
             infiltration_to_transpiration_layer = 0
             evaporation_layer_soil_depth = soil_depth.get(
                 'evaporation_layer_not_covered')
-            temp_1 = (soil_water_content_of_evaporation_layer_at_previous_step + infiltration - evaporation - infiltration_to_transition_layer)
+            soil_water_content_of_evaporation_layer_at_current_step = (soil_water_content_of_evaporation_layer_at_previous_step + infiltration - evaporation - infiltration_to_transition_layer)
 
 
-        temp_2 = (field_capacity_soil_water_content_of_evaporation_layer /100) * (evaporation_layer_soil_depth * 10)
+        soil_water_content_of_evaporation_layer_at_field_capacity = (field_capacity_soil_water_content_of_evaporation_layer /100) * (evaporation_layer_soil_depth * 10)
 
-        temp_3 = (permanent_wilting_point_soil_water_content_of_evaporation_layer / 100) * (evaporation_layer_soil_depth * 10)
+        soil_water_content_of_evaporation_layer_at_permanent_wilting_point = (permanent_wilting_point_soil_water_content_of_evaporation_layer / 100) * (evaporation_layer_soil_depth * 10)
 
-        if temp_1 <= temp_3:
-            temp_1 = temp_3
-            evaporation = soil_water_content_of_evaporation_layer_at_previous_step - temp_3
+        if soil_water_content_of_evaporation_layer_at_current_step <= soil_water_content_of_evaporation_layer_at_permanent_wilting_point:
+            soil_water_content_of_evaporation_layer_at_current_step = soil_water_content_of_evaporation_layer_at_permanent_wilting_point
+            evaporation = soil_water_content_of_evaporation_layer_at_previous_step - soil_water_content_of_evaporation_layer_at_permanent_wilting_point
             
 
-        elif temp_1 >= temp_2:
+        elif soil_water_content_of_evaporation_layer_at_current_step >= soil_water_content_of_evaporation_layer_at_field_capacity:
             if coverd is True:
-                infiltration_to_transpiration_layer = temp_1 - temp_2
-                temp_1 = temp_2
+                infiltration_to_transpiration_layer = soil_water_content_of_evaporation_layer_at_current_step - soil_water_content_of_evaporation_layer_at_field_capacity
+                soil_water_content_of_evaporation_layer_at_current_step = soil_water_content_of_evaporation_layer_at_field_capacity
             else:
-                infiltration_to_transition_layer = temp_1 - temp_2
-                temp_1 = temp_2
+                infiltration_to_transition_layer = soil_water_content_of_evaporation_layer_at_current_step - soil_water_content_of_evaporation_layer_at_field_capacity
+                soil_water_content_of_evaporation_layer_at_current_step = soil_water_content_of_evaporation_layer_at_field_capacity
 
-        return temp_1, evaporation, infiltration_to_transpiration_layer, infiltration_to_transition_layer
+        return soil_water_content_of_evaporation_layer_at_current_step, evaporation, infiltration_to_transpiration_layer, infiltration_to_transition_layer
     
 
     def transpiration_layer(
@@ -297,40 +297,40 @@ class SoilContent :
         
         transpiration_layer_soil_depth = root_depth
 
-        temp_1 = (soil_water_content_of_transpiration_layer_at_previous_step + infiltration_from_evaporation_to_transpiration_layer + upward_flux_from_transition_to_transpiration_layer
+        soil_water_content_of_transpiration_layer_at_current_step = (soil_water_content_of_transpiration_layer_at_previous_step + infiltration_from_evaporation_to_transpiration_layer + upward_flux_from_transition_to_transpiration_layer
                 - transpiration - upward_flux_from_transpiration_to_evaporation_layer - infiltration_from_transpiration_to_transition_layer)
 
-        temp_2 = (field_capacity_soil_water_content_of_transpiration_layer / 100) * (transpiration_layer_soil_depth * 10)
-        temp_2 = temp_2 * stress_coefficient
-        temp_3 = (permanent_wilting_point_soil_water_content_of_transpiration_layer / 100) * (transpiration_layer_soil_depth * 10)
+        soil_water_content_of_transpiration_layer_at_field_capacity = (field_capacity_soil_water_content_of_transpiration_layer / 100) * (transpiration_layer_soil_depth * 10)
+        soil_water_content_of_transpiration_layer_at_field_capacity_with_stress = soil_water_content_of_transpiration_layer_at_field_capacity * stress_coefficient
+        soil_water_content_of_transpiration_layer_at_permanent_wilting_point = (permanent_wilting_point_soil_water_content_of_transpiration_layer / 100) * (transpiration_layer_soil_depth * 10)
         
-        if temp_1 <= temp_3:
-            temp_1 = temp_3
-            transpiration = (soil_water_content_of_transpiration_layer_at_previous_step - temp_3 + upward_flux_from_transition_to_transpiration_layer)
-            irrigation_requirement = temp_2 - temp_1
+        if soil_water_content_of_transpiration_layer_at_current_step <= soil_water_content_of_transpiration_layer_at_permanent_wilting_point:
+            soil_water_content_of_transpiration_layer_at_current_step = soil_water_content_of_transpiration_layer_at_permanent_wilting_point
+            transpiration = (soil_water_content_of_transpiration_layer_at_previous_step - soil_water_content_of_transpiration_layer_at_permanent_wilting_point + upward_flux_from_transition_to_transpiration_layer)
+            irrigation_requirement = soil_water_content_of_transpiration_layer_at_field_capacity_with_stress - soil_water_content_of_transpiration_layer_at_current_step
             # transpiration = (soil_water_content_of_transpiration_layer_at_previous_step - upward_flux_from_transpiration_to_evaporation_layer + upward_flux_from_transition_to_transpiration_layer)
             # in porside she ke kodom dorste - faghat toye manfi tafafod dare
 
             
 
-        elif temp_1 >= temp_2:
-            temp_1 = temp_2
-            infiltration_from_transpiration_to_transition_layer = temp_1 - temp_2
+        elif soil_water_content_of_transpiration_layer_at_current_step >= soil_water_content_of_transpiration_layer_at_field_capacity_with_stress:
+            soil_water_content_of_transpiration_layer_at_current_step = soil_water_content_of_transpiration_layer_at_field_capacity_with_stress
+            infiltration_from_transpiration_to_transition_layer = soil_water_content_of_transpiration_layer_at_current_step - soil_water_content_of_transpiration_layer_at_field_capacity_with_stress
             irrigation_requirement = 0
 
             
 
-        elif temp_3 < temp_1 < temp_2:
-          temp_4 = MAD * (temp_2 - temp_3)
-          if temp_4 >= temp_1:
-            irrigation_requirement = temp_2 - temp_1
-            temp_1 = temp_2
+        elif soil_water_content_of_transpiration_layer_at_permanent_wilting_point < soil_water_content_of_transpiration_layer_at_current_step < soil_water_content_of_transpiration_layer_at_field_capacity_with_stress:
+          soil_water_content_of_transpiration_layer_at_maximum_allowable_depletion = MAD * (soil_water_content_of_transpiration_layer_at_field_capacity_with_stress - soil_water_content_of_transpiration_layer_at_permanent_wilting_point)
+          if soil_water_content_of_transpiration_layer_at_maximum_allowable_depletion >= soil_water_content_of_transpiration_layer_at_current_step:
+            irrigation_requirement = soil_water_content_of_transpiration_layer_at_field_capacity_with_stress - soil_water_content_of_transpiration_layer_at_current_step
+            soil_water_content_of_transpiration_layer_at_current_step = soil_water_content_of_transpiration_layer_at_field_capacity_with_stress
             transpiration = 0
           else :
             irrigation_requirement = 0
-
+            # TO DO : does transpiration need to correct ?
         
-        return temp_1, transpiration, infiltration_from_transpiration_to_transition_layer, irrigation_requirement
+        return soil_water_content_of_transpiration_layer_at_current_step, transpiration, infiltration_from_transpiration_to_transition_layer, irrigation_requirement
     
 
 
@@ -385,27 +385,27 @@ class SoilContent :
                 infiltration_from_transpiration_to_transition_layer = 0
 
 
-            temp_1 = (soil_water_content_of_transition_layer_at_previous_step + infiltration_from_transpiration_to_transition_layer
+            soil_water_content_of_transition_layer_at_current_step = (soil_water_content_of_transition_layer_at_previous_step + infiltration_from_transpiration_to_transition_layer
                     - deep_percolation - upward_flux_from_transition_to_transpiration_layer)
 
-            temp_2 = (field_capacity_soil_water_content_of_transition_layer / 100) * (transition_layer_soil_depth * 10)
+            soil_water_content_of_transition_layer_at_field_capacity = (field_capacity_soil_water_content_of_transition_layer / 100) * (transition_layer_soil_depth * 10)
 
-            temp_3 = (permanent_wilting_point_soil_water_content_of_transition_layer / 100) * (transition_layer_soil_depth * 10)
+            soil_water_content_of_transition_layer_at_permanent_wilting_point = (permanent_wilting_point_soil_water_content_of_transition_layer / 100) * (transition_layer_soil_depth * 10)
 
 
-            if temp_1 < temp_3:
-                upward_flux_from_transition_to_transpiration_layer = upward_flux_from_transition_to_transpiration_layer - (temp_3 - temp_1) 
-                temp_1 = temp_3
+            if soil_water_content_of_transition_layer_at_current_step < soil_water_content_of_transition_layer_at_permanent_wilting_point:
+                upward_flux_from_transition_to_transpiration_layer = upward_flux_from_transition_to_transpiration_layer - (soil_water_content_of_transition_layer_at_permanent_wilting_point - soil_water_content_of_transition_layer_at_current_step) 
+                soil_water_content_of_transition_layer_at_current_step = soil_water_content_of_transition_layer_at_permanent_wilting_point
 
                 
 
-            elif temp_1 > temp_2:
-                deep_percolation = (temp_1 - temp_2)
-                temp_1 = temp_2
+            elif soil_water_content_of_transition_layer_at_current_step > soil_water_content_of_transition_layer_at_field_capacity:
+                deep_percolation = (soil_water_content_of_transition_layer_at_current_step - soil_water_content_of_transition_layer_at_field_capacity)
+                soil_water_content_of_transition_layer_at_current_step = soil_water_content_of_transition_layer_at_field_capacity
 
                 
 
             else:
-                temp_1 = temp_1
+                soil_water_content_of_transition_layer_at_current_step = soil_water_content_of_transition_layer_at_current_step
             
-            return temp_1, upward_flux_from_transition_to_transpiration_layer, deep_percolation
+            return soil_water_content_of_transition_layer_at_current_step, upward_flux_from_transition_to_transpiration_layer, deep_percolation
