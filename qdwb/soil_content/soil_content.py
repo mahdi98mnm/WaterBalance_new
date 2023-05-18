@@ -28,7 +28,9 @@ class SoilContent :
         soil_water_content_of_transition_layer_at_previous_step: float,
         deep_percolation: float,
         hydraulic_conductivity_of_transpiration_layer: float,
-        hydraulic_conductivity_of_transition_layer: float
+        hydraulic_conductivity_of_transition_layer: float,
+        infiltration_from_evaporation_to_transition_layer : float,
+        upward_flux_from_transition_to_evaporation_layer : float 
     ):
         self.soil_water_content_of_evaporation_layer_at_previous_step = soil_water_content_of_evaporation_layer_at_previous_step
         self.infiltration = infiltration
@@ -55,7 +57,8 @@ class SoilContent :
         self.deep_percolation = deep_percolation
         self.hydraulic_conductivity_of_transpiration_layer = hydraulic_conductivity_of_transpiration_layer
         self.hydraulic_conductivity_of_transition_layer = hydraulic_conductivity_of_transition_layer
-
+        self.infiltration_from_evaporation_to_transition_layer = infiltration_from_evaporation_to_transition_layer
+        self.upward_flux_from_transition_to_evaporation_layer = upward_flux_from_transition_to_evaporation_layer
 
     def upward_flux(
         coverd: bool,
@@ -117,7 +120,7 @@ class SoilContent :
 
 
         evaporation_layer_soil_depth = soil_depth.get('evaporation_layer_covered')
-        transition_layer_soil_depth = soil_depth.get('transition_layer_covered')
+        transition_layer_soil_depth = soil_depth.get('transition_layer')
 
         temp_1_fc = (field_capacity_soil_water_content_of_evaporation_layer / 100) * (evaporation_layer_soil_depth * 10)
         temp_3_fc = (field_capacity_soil_water_content_of_transition_layer / 100) * (transition_layer_soil_depth * 10)
@@ -334,7 +337,7 @@ class SoilContent :
     
 
 
-    def transition_layer(
+    def transition_layer_covered(
         coverd: bool,
         field_capacity_soil_water_content_of_transition_layer: float,
         permanent_wilting_point_soil_water_content_of_transition_layer: float,
@@ -369,20 +372,19 @@ class SoilContent :
             soil water content of transition layer in milimeter
         """
         
-        if coverd is False:
-
-            return('while there is no crop, transition layer is not defined ')
 
             
-        else:
+        if coverd is True:
 
-            transition_layer_soil_depth = soil_depth.get('transition_layer_covered')
+            transition_layer_soil_depth = soil_depth.get('transition_layer')
 
             if infiltration_from_transpiration_to_transition_layer > 0:
                 upward_flux_from_transition_to_transpiration_layer = 0
+                # TODO : DP ? do halat dare ke ya sefre ya meghdar dare
         
             if upward_flux_from_transition_to_transpiration_layer > 0:
                 infiltration_from_transpiration_to_transition_layer = 0
+                # TODO : DP ? deep_percolation = 0
 
 
             soil_water_content_of_transition_layer_at_current_step = (soil_water_content_of_transition_layer_at_previous_step + infiltration_from_transpiration_to_transition_layer
@@ -403,9 +405,79 @@ class SoilContent :
                 deep_percolation = (soil_water_content_of_transition_layer_at_current_step - soil_water_content_of_transition_layer_at_field_capacity)
                 soil_water_content_of_transition_layer_at_current_step = soil_water_content_of_transition_layer_at_field_capacity
 
-                
-
-            else:
-                soil_water_content_of_transition_layer_at_current_step = soil_water_content_of_transition_layer_at_current_step
+        
             
             return soil_water_content_of_transition_layer_at_current_step, upward_flux_from_transition_to_transpiration_layer, deep_percolation
+    
+
+
+    def transition_layer_notcovered(
+        coverd: bool,
+        field_capacity_soil_water_content_of_transition_layer: float,
+        permanent_wilting_point_soil_water_content_of_transition_layer: float,
+        soil_water_content_of_transition_layer_at_previous_step: float,
+        deep_percolation: float,
+        infiltration_from_evaporation_to_transition_layer : float = 0,
+        upward_flux_from_transition_to_evaporation_layer: float = 0
+    ) -> float:
+        """
+        Description
+        ------------
+        calculating soil water content of transition layer
+        ------------
+        coverd: bool
+            corved yes(True) or not coverd no(False)
+        field_capacity_soil_water_content_of_transition_layer: float
+            field capacity soil water content of transition layer in percent
+        permanent_wilting_point_soil_water_content_of_transition_layer: float
+            permanent wilting point soil water content of transition layer in percent
+        soil_water_content_of_transition_layer_at_previous_step: float
+            soil water content of transition layer at previous step in milimeter
+        deep_percolation: float
+            deep percolation in milimeter
+        infiltration_from_evaporation_to_transition_layer : float
+            infiltration from evaporation to transition layer in milimeter
+        upward_flux_from_transition_to_evaporation_layer: float
+            upward flux from transition to evaporation layer in milimeter
+        ------------
+        Returns
+        ------------
+        soil_water_content_of_transition_layer: float
+            soil water content of transition layer in milimeter
+        """
+
+
+        if coverd is False:
+
+            transition_layer_soil_depth = soil_depth.get('transition_layer')
+
+            if infiltration_from_evaporation_to_transition_layer > 0:
+                upward_flux_from_transition_to_evaporation_layer = 0
+                # TODO : DP ? do halat dare ke ya sefre ya meghdar dare (mese ghabli) - aya mese ghabli doroste?
+        
+            if upward_flux_from_transition_to_evaporation_layer > 0:
+                infiltration_from_evaporation_to_transition_layer = 0
+                # TODO : DP ? deep_percolation = 0 (mese ghabli) - aya mese ghabli doroste?
+            
+
+            soil_water_content_of_transition_layer_at_current_step = (soil_water_content_of_transition_layer_at_previous_step + infiltration_from_evaporation_to_transition_layer
+                    - deep_percolation - upward_flux_from_transition_to_evaporation_layer)
+
+            soil_water_content_of_transition_layer_at_field_capacity = (field_capacity_soil_water_content_of_transition_layer / 100) * (transition_layer_soil_depth * 10)
+
+            soil_water_content_of_transition_layer_at_permanent_wilting_point = (permanent_wilting_point_soil_water_content_of_transition_layer / 100) * (transition_layer_soil_depth * 10)
+
+
+            if soil_water_content_of_transition_layer_at_current_step < soil_water_content_of_transition_layer_at_permanent_wilting_point:
+                upward_flux_from_transition_to_evaporation_layer = upward_flux_from_transition_to_evaporation_layer - (soil_water_content_of_transition_layer_at_permanent_wilting_point - soil_water_content_of_transition_layer_at_current_step) 
+                soil_water_content_of_transition_layer_at_current_step = soil_water_content_of_transition_layer_at_permanent_wilting_point
+
+                
+
+            elif soil_water_content_of_transition_layer_at_current_step > soil_water_content_of_transition_layer_at_field_capacity:
+                deep_percolation = (soil_water_content_of_transition_layer_at_current_step - soil_water_content_of_transition_layer_at_field_capacity)
+                soil_water_content_of_transition_layer_at_current_step = soil_water_content_of_transition_layer_at_field_capacity
+
+        
+            
+            return soil_water_content_of_transition_layer_at_current_step, upward_flux_from_transition_to_evaporation_layer, deep_percolation
