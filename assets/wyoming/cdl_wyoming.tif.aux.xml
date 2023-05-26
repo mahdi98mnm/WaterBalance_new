@@ -1,0 +1,1041 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <Description>Layer_1</Description>
+    <GDALRasterAttributeTable Row0Min="0" BinSize="1" tableType="thematic">
+      <FieldDefn index="0">
+        <Name>Histogram</Name>
+        <Type>1</Type>
+        <Usage>1</Usage>
+      </FieldDefn>
+      <FieldDefn index="1">
+        <Name>Class_Names</Name>
+        <Type>2</Type>
+        <Usage>2</Usage>
+      </FieldDefn>
+      <Row index="0">
+        <F>0</F>
+        <F>Background</F>
+      </Row>
+      <Row index="1">
+        <F>408455556</F>
+        <F>Corn</F>
+      </Row>
+      <Row index="2">
+        <F>68254683</F>
+        <F>Cotton</F>
+      </Row>
+      <Row index="3">
+        <F>10529500</F>
+        <F>Rice</F>
+      </Row>
+      <Row index="4">
+        <F>37000448</F>
+        <F>Sorghum</F>
+      </Row>
+      <Row index="5">
+        <F>399060594</F>
+        <F>Soybeans</F>
+      </Row>
+      <Row index="6">
+        <F>6915581</F>
+        <F>Sunflower</F>
+      </Row>
+      <Row index="7">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="8">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="9">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="10">
+        <F>6620960</F>
+        <F>Peanuts</F>
+      </Row>
+      <Row index="11">
+        <F>452471</F>
+        <F>Tobacco</F>
+      </Row>
+      <Row index="12">
+        <F>1128854</F>
+        <F>Sweet Corn</F>
+      </Row>
+      <Row index="13">
+        <F>750225</F>
+        <F>Pop or Orn Corn</F>
+      </Row>
+      <Row index="14">
+        <F>236947</F>
+        <F>Mint</F>
+      </Row>
+      <Row index="15">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="16">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="17">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="18">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="19">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="20">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="21">
+        <F>11879173</F>
+        <F>Barley</F>
+      </Row>
+      <Row index="22">
+        <F>6844898</F>
+        <F>Durum Wheat</F>
+      </Row>
+      <Row index="23">
+        <F>55640369</F>
+        <F>Spring Wheat</F>
+      </Row>
+      <Row index="24">
+        <F>124959135</F>
+        <F>Winter Wheat</F>
+      </Row>
+      <Row index="25">
+        <F>67280</F>
+        <F>Other Small Grains</F>
+      </Row>
+      <Row index="26">
+        <F>17681658</F>
+        <F>Dbl Crop WinWht/Soybeans</F>
+      </Row>
+      <Row index="27">
+        <F>3297035</F>
+        <F>Rye</F>
+      </Row>
+      <Row index="28">
+        <F>7768827</F>
+        <F>Oats</F>
+      </Row>
+      <Row index="29">
+        <F>4269469</F>
+        <F>Millet</F>
+      </Row>
+      <Row index="30">
+        <F>19490</F>
+        <F>Speltz</F>
+      </Row>
+      <Row index="31">
+        <F>9992854</F>
+        <F>Canola</F>
+      </Row>
+      <Row index="32">
+        <F>1149398</F>
+        <F>Flaxseed</F>
+      </Row>
+      <Row index="33">
+        <F>980087</F>
+        <F>Safflower</F>
+      </Row>
+      <Row index="34">
+        <F>3762</F>
+        <F>Rape Seed</F>
+      </Row>
+      <Row index="35">
+        <F>1217313</F>
+        <F>Mustard</F>
+      </Row>
+      <Row index="36">
+        <F>92115381</F>
+        <F>Alfalfa</F>
+      </Row>
+      <Row index="37">
+        <F>123210988</F>
+        <F>Other Hay/Non Alfalfa</F>
+      </Row>
+      <Row index="38">
+        <F>45342</F>
+        <F>Camelina</F>
+      </Row>
+      <Row index="39">
+        <F>88600</F>
+        <F>Buckwheat</F>
+      </Row>
+      <Row index="40">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="41">
+        <F>5155064</F>
+        <F>Sugarbeets</F>
+      </Row>
+      <Row index="42">
+        <F>5754162</F>
+        <F>Dry Beans</F>
+      </Row>
+      <Row index="43">
+        <F>4701050</F>
+        <F>Potatoes</F>
+      </Row>
+      <Row index="44">
+        <F>309411</F>
+        <F>Other Crops</F>
+      </Row>
+      <Row index="45">
+        <F>5179343</F>
+        <F>Sugarcane</F>
+      </Row>
+      <Row index="46">
+        <F>502503</F>
+        <F>Sweet Potatoes</F>
+      </Row>
+      <Row index="47">
+        <F>314544</F>
+        <F>Misc Vegs &amp; Fruits</F>
+      </Row>
+      <Row index="48">
+        <F>147996</F>
+        <F>Watermelons</F>
+      </Row>
+      <Row index="49">
+        <F>616739</F>
+        <F>Onions</F>
+      </Row>
+      <Row index="50">
+        <F>236609</F>
+        <F>Cucumbers</F>
+      </Row>
+      <Row index="51">
+        <F>1716578</F>
+        <F>Chick Peas</F>
+      </Row>
+      <Row index="52">
+        <F>3098561</F>
+        <F>Lentils</F>
+      </Row>
+      <Row index="53">
+        <F>5041293</F>
+        <F>Peas</F>
+      </Row>
+      <Row index="54">
+        <F>1254275</F>
+        <F>Tomatoes</F>
+      </Row>
+      <Row index="55">
+        <F>58707</F>
+        <F>Caneberries</F>
+      </Row>
+      <Row index="56">
+        <F>352814</F>
+        <F>Hops</F>
+      </Row>
+      <Row index="57">
+        <F>217353</F>
+        <F>Herbs</F>
+      </Row>
+      <Row index="58">
+        <F>852374</F>
+        <F>Clover/Wildflowers</F>
+      </Row>
+      <Row index="59">
+        <F>5772424</F>
+        <F>Sod/Grass Seed</F>
+      </Row>
+      <Row index="60">
+        <F>31764</F>
+        <F>Switchgrass</F>
+      </Row>
+      <Row index="61">
+        <F>86954447</F>
+        <F>Fallow/Idle Cropland</F>
+      </Row>
+      <Row index="62">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="63">
+        <F>0</F>
+        <F>Forest</F>
+      </Row>
+      <Row index="64">
+        <F>0</F>
+        <F>Shrubland</F>
+      </Row>
+      <Row index="65">
+        <F>0</F>
+        <F>Barren</F>
+      </Row>
+      <Row index="66">
+        <F>1187816</F>
+        <F>Cherries</F>
+      </Row>
+      <Row index="67">
+        <F>446133</F>
+        <F>Peaches</F>
+      </Row>
+      <Row index="68">
+        <F>2149712</F>
+        <F>Apples</F>
+      </Row>
+      <Row index="69">
+        <F>4990134</F>
+        <F>Grapes</F>
+      </Row>
+      <Row index="70">
+        <F>413681</F>
+        <F>Christmas Trees</F>
+      </Row>
+      <Row index="71">
+        <F>727878</F>
+        <F>Other Tree Crops</F>
+      </Row>
+      <Row index="72">
+        <F>1953076</F>
+        <F>Citrus</F>
+      </Row>
+      <Row index="73">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="74">
+        <F>2213682</F>
+        <F>Pecans</F>
+      </Row>
+      <Row index="75">
+        <F>8354739</F>
+        <F>Almonds</F>
+      </Row>
+      <Row index="76">
+        <F>2277401</F>
+        <F>Walnuts</F>
+      </Row>
+      <Row index="77">
+        <F>239760</F>
+        <F>Pears </F>
+      </Row>
+      <Row index="78">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="79">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="80">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="81">
+        <F>0</F>
+        <F>Clouds/No Data </F>
+      </Row>
+      <Row index="82">
+        <F>0</F>
+        <F>Developed</F>
+      </Row>
+      <Row index="83">
+        <F>0</F>
+        <F>Water</F>
+      </Row>
+      <Row index="84">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="85">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="86">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="87">
+        <F>0</F>
+        <F>Wetlands</F>
+      </Row>
+      <Row index="88">
+        <F>0</F>
+        <F>Nonag/Undefined</F>
+      </Row>
+      <Row index="89">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="90">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="91">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="92">
+        <F>2299789</F>
+        <F>Aquaculture</F>
+      </Row>
+      <Row index="93">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="94">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="95">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="96">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="97">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="98">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="99">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="100">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="101">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="102">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="103">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="104">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="105">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="106">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="107">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="108">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="109">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="110">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="111">
+        <F>155496450</F>
+        <F>Open Water</F>
+      </Row>
+      <Row index="112">
+        <F>765686</F>
+        <F>Perennial Ice/Snow</F>
+      </Row>
+      <Row index="113">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="114">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="115">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="116">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="117">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="118">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="119">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="120">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="121">
+        <F>241954458</F>
+        <F>Developed/Open Space</F>
+      </Row>
+      <Row index="122">
+        <F>151561425</F>
+        <F>Developed/Low Intensity</F>
+      </Row>
+      <Row index="123">
+        <F>91105842</F>
+        <F>Developed/Med Intensity</F>
+      </Row>
+      <Row index="124">
+        <F>32702674</F>
+        <F>Developed/High Intensity</F>
+      </Row>
+      <Row index="125">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="126">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="127">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="128">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="129">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="130">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="131">
+        <F>86963385</F>
+        <F>Barren</F>
+      </Row>
+      <Row index="132">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="133">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="134">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="135">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="136">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="137">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="138">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="139">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="140">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="141">
+        <F>899144045</F>
+        <F>Deciduous Forest</F>
+      </Row>
+      <Row index="142">
+        <F>1095372719</F>
+        <F>Evergreen Forest</F>
+      </Row>
+      <Row index="143">
+        <F>262271262</F>
+        <F>Mixed Forest</F>
+      </Row>
+      <Row index="144">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="145">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="146">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="147">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="148">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="149">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="150">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="151">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="152">
+        <F>2059299881</F>
+        <F>Shrubland</F>
+      </Row>
+      <Row index="153">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="154">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="155">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="156">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="157">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="158">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="159">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="160">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="161">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="162">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="163">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="164">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="165">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="166">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="167">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="168">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="169">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="170">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="171">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="172">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="173">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="174">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="175">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="176">
+        <F>1476626684</F>
+        <F>Grassland/Pasture</F>
+      </Row>
+      <Row index="177">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="178">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="179">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="180">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="181">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="182">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="183">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="184">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="185">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="186">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="187">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="188">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="189">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="190">
+        <F>398863721</F>
+        <F>Woody Wetlands</F>
+      </Row>
+      <Row index="191">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="192">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="193">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="194">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="195">
+        <F>125675680</F>
+        <F>Herbaceous Wetlands</F>
+      </Row>
+      <Row index="196">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="197">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="198">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="199">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="200">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="201">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="202">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="203">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="204">
+        <F>2954055</F>
+        <F>Pistachios</F>
+      </Row>
+      <Row index="205">
+        <F>3695865</F>
+        <F>Triticale</F>
+      </Row>
+      <Row index="206">
+        <F>200189</F>
+        <F>Carrots</F>
+      </Row>
+      <Row index="207">
+        <F>43949</F>
+        <F>Asparagus</F>
+      </Row>
+      <Row index="208">
+        <F>161178</F>
+        <F>Garlic</F>
+      </Row>
+      <Row index="209">
+        <F>54359</F>
+        <F>Cantaloupes</F>
+      </Row>
+      <Row index="210">
+        <F>319732</F>
+        <F>Prunes</F>
+      </Row>
+      <Row index="211">
+        <F>324924</F>
+        <F>Olives</F>
+      </Row>
+      <Row index="212">
+        <F>3132941</F>
+        <F>Oranges</F>
+      </Row>
+      <Row index="213">
+        <F>13148</F>
+        <F>Honeydew Melons</F>
+      </Row>
+      <Row index="214">
+        <F>68441</F>
+        <F>Broccoli</F>
+      </Row>
+      <Row index="215">
+        <F>235984</F>
+        <F>Avocados</F>
+      </Row>
+      <Row index="216">
+        <F>84906</F>
+        <F>Peppers</F>
+      </Row>
+      <Row index="217">
+        <F>148641</F>
+        <F>Pomegranates</F>
+      </Row>
+      <Row index="218">
+        <F>11918</F>
+        <F>Nectarines</F>
+      </Row>
+      <Row index="219">
+        <F>174145</F>
+        <F>Greens</F>
+      </Row>
+      <Row index="220">
+        <F>296172</F>
+        <F>Plums</F>
+      </Row>
+      <Row index="221">
+        <F>75486</F>
+        <F>Strawberries</F>
+      </Row>
+      <Row index="222">
+        <F>81603</F>
+        <F>Squash</F>
+      </Row>
+      <Row index="223">
+        <F>2073</F>
+        <F>Apricots</F>
+      </Row>
+      <Row index="224">
+        <F>7011</F>
+        <F>Vetch</F>
+      </Row>
+      <Row index="225">
+        <F>1330249</F>
+        <F>Dbl Crop WinWht/Corn</F>
+      </Row>
+      <Row index="226">
+        <F>336425</F>
+        <F>Dbl Crop Oats/Corn</F>
+      </Row>
+      <Row index="227">
+        <F>283369</F>
+        <F>Lettuce</F>
+      </Row>
+      <Row index="228">
+        <F>872438</F>
+        <F>Dbl Crop Triticale/Corn</F>
+      </Row>
+      <Row index="229">
+        <F>140236</F>
+        <F>Pumpkins</F>
+      </Row>
+      <Row index="230">
+        <F>3050</F>
+        <F>Dbl Crop Lettuce/Durum Wht</F>
+      </Row>
+      <Row index="231">
+        <F>32048</F>
+        <F>Dbl Crop Lettuce/Cantaloupe</F>
+      </Row>
+      <Row index="232">
+        <F>40500</F>
+        <F>Dbl Crop Lettuce/Cotton</F>
+      </Row>
+      <Row index="233">
+        <F>2445</F>
+        <F>Dbl Crop Lettuce/Barley</F>
+      </Row>
+      <Row index="234">
+        <F>0</F>
+        <F>Dbl Crop Durum Wht/Sorghum</F>
+      </Row>
+      <Row index="235">
+        <F>0</F>
+        <F>Dbl Crop Barley/Sorghum</F>
+      </Row>
+      <Row index="236">
+        <F>2325131</F>
+        <F>Dbl Crop WinWht/Sorghum</F>
+      </Row>
+      <Row index="237">
+        <F>91167</F>
+        <F>Dbl Crop Barley/Corn</F>
+      </Row>
+      <Row index="238">
+        <F>1555581</F>
+        <F>Dbl Crop WinWht/Cotton</F>
+      </Row>
+      <Row index="239">
+        <F>0</F>
+        <F>Dbl Crop Soybeans/Cotton</F>
+      </Row>
+      <Row index="240">
+        <F>110160</F>
+        <F>Dbl Crop Soybeans/Oats</F>
+      </Row>
+      <Row index="241">
+        <F>15768</F>
+        <F>Dbl Crop Corn/Soybeans</F>
+      </Row>
+      <Row index="242">
+        <F>1112941</F>
+        <F>Blueberries</F>
+      </Row>
+      <Row index="243">
+        <F>112595</F>
+        <F>Cabbage</F>
+      </Row>
+      <Row index="244">
+        <F>21746</F>
+        <F>Cauliflower</F>
+      </Row>
+      <Row index="245">
+        <F>5131</F>
+        <F>Celery</F>
+      </Row>
+      <Row index="246">
+        <F>44360</F>
+        <F>Radishes</F>
+      </Row>
+      <Row index="247">
+        <F>19600</F>
+        <F>Turnips</F>
+      </Row>
+      <Row index="248">
+        <F>3774</F>
+        <F>Eggplants</F>
+      </Row>
+      <Row index="249">
+        <F>1639</F>
+        <F>Gourds</F>
+      </Row>
+      <Row index="250">
+        <F>40045</F>
+        <F>Cranberries</F>
+      </Row>
+      <Row index="251">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="252">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="253">
+        <F>0</F>
+        <F></F>
+      </Row>
+      <Row index="254">
+        <F>208489</F>
+        <F>Dbl Crop Barley/Soybeans</F>
+      </Row>
+      <Row index="255">
+        <F>0</F>
+        <F></F>
+      </Row>
+    </GDALRasterAttributeTable>
+  </PAMRasterBand>
+</PAMDataset>

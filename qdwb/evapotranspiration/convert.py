@@ -180,7 +180,7 @@ def standard_date_to_Julian_day (
         Number of days of the year taking into account the leap year
     """
         
-    fmt='%Y-%m-%d'
+    fmt='%Y-%m-%dT%H:%M:%S.%f000'
     sdtdate = datetime.datetime.strptime(standard_date_in_gregorian, fmt)
     sdtdate = sdtdate.timetuple()
     jdate = sdtdate.tm_yday
