@@ -333,6 +333,12 @@ class SoilContent :
             irrigation_requirement = 0
             # TO DO : does transpiration need to correct ?
         
+        else :
+            soil_water_content_of_transpiration_layer_at_current_step = 999
+            infiltration_from_transpiration_to_transition_layer = 999
+            irrigation_requirement = 999
+
+        
         return soil_water_content_of_transpiration_layer_at_current_step, transpiration, infiltration_from_transpiration_to_transition_layer, irrigation_requirement
     
 
