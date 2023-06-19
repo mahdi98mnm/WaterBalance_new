@@ -1,5 +1,4 @@
 soil_depth = {
-    'evaporation_layer_covered' : 10,
-    'evaporation_layer_not_covered' : 15,
-    'transition_layer' : 100
+    'evaporation_layer' : 100,
+    'transition_layer' : 1000
 }
