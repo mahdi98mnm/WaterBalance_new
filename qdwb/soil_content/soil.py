@@ -209,33 +209,29 @@ class SoilContent :
         
         temp_2 = init_swc_transpiration_layer + current_evaporation_layer_to_transpiration_layer - transpiration
 
+        fc_transpiration_layer_for_deficit_irrigation = fc_transpiration_layer * stress_coefficient
+
         available_water = fc_transpiration_layer - pwp_transpiration_layer
-        
-        available_water_with_stress = (fc_transpiration_layer - pwp_transpiration_layer) * stress_coefficient
 
-        deficit_water = (available_water - available_water_with_stress) / 2
-
-        fc_transpiration_layer_with_stress = fc_transpiration_layer - deficit_water
-        pwp_transpiration_layer_with_stress = pwp_transpiration_layer + deficit_water
-
-
-        if temp_2 >= fc_transpiration_layer_with_stress:
+        if temp_2 >= fc_transpiration_layer:
             
-            current_transpiration_layer_to_transition_layer = temp_2 - fc_transpiration_layer_with_stress
+            current_transpiration_layer_to_transition_layer = temp_2 - fc_transpiration_layer
             
-            current_swc_transpiration_layer = fc_transpiration_layer_with_stress 
+            current_swc_transpiration_layer = fc_transpiration_layer 
 
             irrigation_requirement = 0
                 
         
-        elif temp_2 <= pwp_transpiration_layer_with_stress:
+        elif temp_2 <= pwp_transpiration_layer:
 
 
-            transpiration = transpiration - (pwp_transpiration_layer_with_stress - temp_2)
+            transpiration = transpiration - (pwp_transpiration_layer - temp_2)
 
-            current_swc_transpiration_layer = pwp_transpiration_layer_with_stress
+            irrigation_requirement = fc_transpiration_layer_for_deficit_irrigation - temp_2
 
-            irrigation_requirement = fc_transpiration_layer_with_stress - current_swc_transpiration_layer
+            current_swc_transpiration_layer = pwp_transpiration_layer
+
+            
             
             
             
@@ -247,7 +243,7 @@ class SoilContent :
             
             
         else:
-            current_swc_transpiration_layer_in_MAD = MAD * (available_water)
+            current_swc_transpiration_layer_in_MAD = fc_transpiration_layer - (MAD * available_water)
 
             if current_swc_transpiration_layer_in_MAD >= temp_2:
                 
