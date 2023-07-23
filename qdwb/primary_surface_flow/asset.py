@@ -72,5 +72,9 @@ def calculate_potential_retention(
 
     check_curve_number(curve_number)
 
+    if curve_number == 0:
+        s = 0
+    else:
+        s = (1000/curve_number - 10)*25.4
     # Constant 25.4, convert inch to mm
-    return (1000/curve_number - 10)*25.4
+    return s

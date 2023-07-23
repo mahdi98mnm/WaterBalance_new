@@ -22,15 +22,15 @@ def check_precipitation(
         Event rainfall depth - Starts from 0 - mm
     """
     
-    if not isinstance(precipitation, (int, float)):
-        raise TypeError(
-            f'Precipitation value must be int or float: {precipitation}'
-        )
+    # if not isinstance(precipitation, (int, float)):
+    #     raise TypeError(
+    #         f'Precipitation value must be int or float: {precipitation}'
+    #     )
 
-    if lt(precipitation, 0):
-        raise ValueError(
-            f'Precipitation value must be greater than zero: {precipitation}'
-        )
+    # if lt(precipitation, 0):
+    #     raise ValueError(
+    #         f'Precipitation value must be greater than zero: {precipitation}'
+    #     )
 
 
 def check_curve_number(
@@ -48,15 +48,15 @@ def check_curve_number(
         An index of the land condition as indicated by soils, cover, land use - Between 0 to 100 - dimensionless
     """
     
-    if not isinstance(curve_number, (int, float)):
-        raise TypeError(
-            f'Curve number must be int or float: {curve_number}'
-        )
+    # if not isinstance(curve_number, (int, float)):
+    #     raise TypeError(
+    #         f'Curve number must be int or float: {curve_number}'
+    #     )
 
-    if lt(curve_number, 0) or gt(curve_number, 100):
-        raise ValueError(
-            f'Curve number must be between 0 to 100: {curve_number}'
-        )
+    # if lt(curve_number, 0) or gt(curve_number, 100):
+    #     raise ValueError(
+    #         f'Curve number must be between 0 to 100: {curve_number}'
+    #     )
 
 
 def check_rsa(
@@ -74,10 +74,10 @@ def check_rsa(
         Runoff source area - 0 or 1 - dimensionless
     """
 
-    if not isinstance(rsa, bool):
-        raise TypeError(
-            f'RSA must be boolean: {rsa}'
-        )
+    # if not isinstance(rsa, bool):
+    #     raise TypeError(
+    #         f'RSA must be boolean: {rsa}'
+    #     )
 
 
 def check_antecedent_precipitation(
@@ -95,15 +95,15 @@ def check_antecedent_precipitation(
         Antecedent precipitation is precipitation falling before, but influencing the runoff yields of, a given rainfall event - Starts from 0 - mm
     """
     
-    if not isinstance(antecedent_precipitation, (int, float)):
-        raise TypeError(
-            f'Antecedent precipitation must be int or float: {antecedent_precipitation}'
-        )
+    # if not isinstance(antecedent_precipitation, (int, float)):
+    #     raise TypeError(
+    #         f'Antecedent precipitation must be int or float: {antecedent_precipitation}'
+    #     )
 
-    if lt(antecedent_precipitation, 0):
-        raise ValueError(
-            f'Antecedent precipitation must be greater than zero: {antecedent_precipitation}'
-        )
+    # if lt(antecedent_precipitation, 0):
+    #     raise ValueError(
+    #         f'Antecedent precipitation must be greater than zero: {antecedent_precipitation}'
+    #     )
 
 
 def check_is_growing_season(
@@ -121,7 +121,7 @@ def check_is_growing_season(
         Check if it's growing season or not - 0 or 1 - dimensionless
     """
 
-    if not isinstance(is_growing_season, bool):
-        raise TypeError(
-            f'is_growing_season must be boolean: {is_growing_season}'
-        )
+    # if not isinstance(is_growing_season, bool):
+    #     raise TypeError(
+    #         f'is_growing_season must be boolean: {is_growing_season}'
+    #     )

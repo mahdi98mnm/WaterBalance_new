@@ -75,7 +75,10 @@ class PrimarySurfaceFlow :
             modified_cn = curve_number
 
         if rsa:
-            runoff = (precipitation - 0.2*calculate_potential_retention(modified_cn))**2 \
+            if precipitation + 0.8*calculate_potential_retention(modified_cn) == 0 :
+                runoff = 0
+            else:
+                runoff = (precipitation - 0.2*calculate_potential_retention(modified_cn))**2 \
                 / (precipitation + 0.8*calculate_potential_retention(modified_cn))
         else:
             runoff = 0
