@@ -1,4 +1,5 @@
 from datetime import date
+import numpy as np
 from typing import List, Dict, Tuple, Set, Optional, Union, Any, NoReturn
 from .check import *
 from .global_variable import *
@@ -443,23 +444,26 @@ class PotentialEvapotranspiration :
             length_ini_crop = length_ini_crop,
             length_dev_crop = length_dev_crop,
             length_mid_crop = length_mid_crop,
-            length_late_crop = length_late_crop)
+            length_late_crop = length_late_crop
+        )
             
         if n_day <= length_ini_crop :
-            crop_coefficient = crop_coefficient_ini
+            cc = crop_coefficient_ini
 
         elif length_ini_crop < n_day <= length_ini_crop + length_dev_crop :
-            crop_coefficient = crop_coefficient_ini + ((n_day - length_ini_crop) / length_dev_crop) * (
+            cc = crop_coefficient_ini + ((n_day - length_ini_crop) / length_dev_crop) * (
                 crop_coefficient_mid - crop_coefficient_ini)
 
         elif length_ini_crop + length_dev_crop < n_day <= length_ini_crop + length_dev_crop + length_mid_crop :
-            crop_coefficient = crop_coefficient_mid
+            cc = crop_coefficient_mid
 
         elif length_ini_crop + length_dev_crop + length_mid_crop < n_day <= length_ini_crop + length_dev_crop + length_mid_crop + length_late_crop :
-            crop_coefficient = crop_coefficient_mid + ((n_day - length_ini_crop - length_dev_crop - length_mid_crop) / length_late_crop) * (
+            cc = crop_coefficient_mid + ((n_day - length_ini_crop - length_dev_crop - length_mid_crop) / length_late_crop) * (
                 crop_coefficient_end - crop_coefficient_mid)
+        else:
+            cc = np.nan
         
-        return crop_coefficient
+        return cc
     
 
 
