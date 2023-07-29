@@ -1,5 +1,7 @@
+import math
 from datetime import date
 import numpy as np
+import pandas as pd
 from typing import List, Dict, Tuple, Set, Optional, Union, Any, NoReturn
 from .check import *
 from .global_variable import *
@@ -397,6 +399,17 @@ class PotentialEvapotranspiration :
         plant_date : str,
         modeling_date : str
     ) -> float:
+        
+        if math.isnan(crop_coefficient_ini) or\
+            math.isnan(crop_coefficient_mid) or\
+                math.isnan(crop_coefficient_end) or\
+                    math.isnan(length_ini_crop) or\
+                        math.isnan(length_dev_crop) or\
+                            math.isnan(length_mid_crop) or\
+                                math.isnan(length_late_crop) or\
+                                    pd.isnull(plant_date):
+                                        return np.nan
+            
 
         """
         Description
@@ -437,15 +450,15 @@ class PotentialEvapotranspiration :
         n_day = n.days
         # n_day : Number of days since the beginning of crop cultivation
         
-        check_date_for_crop_coefficient(
-            plant_date = plant_date,
-            modeling_date = modeling_date,
-            n = n_day,
-            length_ini_crop = length_ini_crop,
-            length_dev_crop = length_dev_crop,
-            length_mid_crop = length_mid_crop,
-            length_late_crop = length_late_crop
-        )
+        # check_date_for_crop_coefficient(
+        #     plant_date = plant_date,
+        #     modeling_date = modeling_date,
+        #     n = n_day,
+        #     length_ini_crop = length_ini_crop,
+        #     length_dev_crop = length_dev_crop,
+        #     length_mid_crop = length_mid_crop,
+        #     length_late_crop = length_late_crop
+        # )
             
         if n_day <= length_ini_crop :
             cc = crop_coefficient_ini
