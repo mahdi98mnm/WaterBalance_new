@@ -898,10 +898,8 @@ def wind_speed_at_2m_above_ground_surface(
 
 def available_evaporable_water(
     e_a : float,
-    is_in_fisrt_step : bool,
     infiltration : float,
-    initial_available_evaporable_water : float = None,
-    available_evaporable_water_in_previous_step : float = None
+    available_evaporable_water_in_previous_step : float
 ) -> float:
 
     """
@@ -927,10 +925,11 @@ def available_evaporable_water(
         available evaporable water in mm
     
     """
-    if is_in_fisrt_step is True:
-        ae = initial_available_evaporable_water
-    else:
-        ae = available_evaporable_water_in_previous_step
+    # if is_in_fisrt_step is True:
+    #     ae = initial_available_evaporable_water
+    # else:
+    #     ae = available_evaporable_water_in_previous_step
+    ae = available_evaporable_water_in_previous_step
     
     
 

@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 def waterSoilContentNotCoverd(
     infiltration: float,
@@ -386,7 +387,7 @@ def waterSoilContent(
 ):
     if covered == 2:
         
-        current_evaporation_layer_to_transition_layer = pd.NA
+        current_evaporation_layer_to_transition_layer = np.nan
         # current soil water content of Evaporation Layer:-------------------------------------------------------------------------------------------
         
         fc_evaporation_layer = fc_evaporation_layer *  z_evaporation_layer / 100
@@ -537,11 +538,11 @@ def waterSoilContent(
     
     elif covered == 1 :
         
-        current_swc_transpiration_layer = pd.NA
-        current_evaporation_layer_to_transpiration_layer = pd.NA
-        current_transpiration_layer_to_transition_layer = pd.NA
-        transpiration = pd.NA
-        irrigation_requirement = pd.NA
+        current_swc_transpiration_layer = np.nan
+        current_evaporation_layer_to_transpiration_layer = np.nan
+        current_transpiration_layer_to_transition_layer = np.nan
+        transpiration = np.nan
+        irrigation_requirement = np.nan
         
         # current soil water content of Evaporation Layer:-------------------------------------------------------------------------------------------
         
@@ -619,6 +620,17 @@ def waterSoilContent(
             deepPercolation = 0
 
         # -------------------------------------------------------------------------------------------
+    else:
+        current_swc_evaporation_layer = np.nan
+        current_swc_transpiration_layer = np.nan
+        current_swc_transition_layer = np.nan
+        current_evaporation_layer_to_transpiration_layer = np.nan
+        current_evaporation_layer_to_transition_layer = np.nan
+        current_transpiration_layer_to_transition_layer = np.nan
+        transpiration = np.nan
+        evaporation = evaporation
+        irrigation_requirement = np.nan
+        deepPercolation = np.nan
         
     return current_swc_evaporation_layer, current_swc_transpiration_layer, current_swc_transition_layer, current_evaporation_layer_to_transpiration_layer,current_evaporation_layer_to_transition_layer ,current_transpiration_layer_to_transition_layer, transpiration, evaporation, irrigation_requirement, deepPercolation
         
