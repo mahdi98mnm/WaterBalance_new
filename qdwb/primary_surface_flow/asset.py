@@ -1,5 +1,6 @@
 from .check import *
 from typing import List, Dict, Tuple, Set, Optional, Union, Any, NoReturn
+import numpy as np
 
 def modify_CN(
     curve_number: float,
