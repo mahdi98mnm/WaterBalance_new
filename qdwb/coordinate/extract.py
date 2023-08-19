@@ -14,7 +14,7 @@ def transform_from_latlon(lat, lon):
     scale = Affine.scale(lon[1] - lon[0], lat[1] - lat[0])
     return trans * scale
 
-def rasterize(shapes, coords, latitude='y', longitude='x',
+def rasterize(shapes, coords, latitude='lat', longitude='lon',
               fill=np.nan, **kwargs):
     """Rasterize a list of (geometry, fill_value) tuples onto the given
     xray coordinates. This only works for 1d latitude and longitude
@@ -78,6 +78,6 @@ def add_shape_coord_from_data_array(xr_da, shp_path, coord_name):
 
     # 3. create a new coord in the xr_da which will be set to the id in `shapes`
     xr_da[coord_name] = rasterize(shapes, xr_da.coords, 
-                               longitude='x', latitude='y')
+                               longitude='lon', latitude='lat')
 
     return xr_da

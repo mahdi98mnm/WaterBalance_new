@@ -72,8 +72,9 @@ def calculate_potential_retention(
     """
 
     check_curve_number(curve_number)
+    
 
-    if curve_number == 0:
+    if curve_number == 0 or curve_number is None:
         s = 0
     else:
         s = (1000/curve_number - 10)*25.4

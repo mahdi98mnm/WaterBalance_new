@@ -9,8 +9,8 @@ class PrimarySurfaceFlow :
         precipitation : float,
         curve_number : float,
         rsa : bool,
-        antecedent_precipitation : float = None,
-        is_growing_season : bool = None
+        antecedent_precipitation : float,
+        is_growing_season : bool
     ):
         self.precipitation = precipitation
         self.curve_number = curve_number
@@ -24,8 +24,8 @@ class PrimarySurfaceFlow :
         precipitation: float,
         curve_number: float,
         rsa: bool,
-        antecedent_precipitation: float = None,
-        is_growing_season: bool = None
+        antecedent_precipitation: float,
+        is_growing_season: bool
     ) -> Tuple[float, float]:
         """
         Description
