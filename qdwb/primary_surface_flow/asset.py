@@ -30,22 +30,19 @@ def modify_CN(
         An index of the land condition as indicated by soils, cover, land use - Between 0 to 100 - dimensionless
     """
 
-    check_curve_number(curve_number)
-    check_antecedent_precipitation(antecedent_precipitation)
-    check_is_growing_season(is_growing_season)
+    # check_curve_number(curve_number)
+    # check_antecedent_precipitation(antecedent_precipitation)
+    # check_is_growing_season(is_growing_season)
     
 
-    if (is_growing_season and antecedent_precipitation < 12.7) or \
-        (not(is_growing_season) and antecedent_precipitation < 35.6):
-        return (4.2*curve_number) / (10-0.058*curve_number)
+    if (not(is_growing_season) and antecedent_precipitation < 12.7) or (is_growing_season and antecedent_precipitation < 35.6):
+        return (4.2 * curve_number) / (10 - (0.058 * curve_number))
         
-    elif (is_growing_season and 12.7 < antecedent_precipitation < 27.9) or \
-        (not(is_growing_season) and 35.6 < antecedent_precipitation < 53.3):
+    elif (not(is_growing_season) and 12.7 < antecedent_precipitation < 27.9) or (is_growing_season and 35.6 < antecedent_precipitation < 53.3):
         return curve_number
 
-    elif (is_growing_season and antecedent_precipitation > 27.9) or \
-        (not(is_growing_season) and antecedent_precipitation > 53.3):
-        return (23*curve_number) / (10 + 0.13*curve_number)
+    elif (not(is_growing_season) and antecedent_precipitation > 27.9) or (is_growing_season and antecedent_precipitation > 53.3):
+        return (23 * curve_number) / (10 + (0.13 * curve_number))
 
 
 
@@ -71,7 +68,7 @@ def calculate_potential_retention(
         Maximum depth of storm rainfall that could potentially be abstracted by a given site - Starts from 0 - mm
     """
 
-    check_curve_number(curve_number)
+    # check_curve_number(curve_number)
     
 
     if curve_number == 0 or curve_number is None:
