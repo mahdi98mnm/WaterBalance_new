@@ -409,8 +409,11 @@ def waterSoilContent(
         
         elif temp_1 <= pwp_evaporation_layer:
             
-            
-            evaporation = evaporation - (pwp_evaporation_layer - temp_1)
+            if evaporation > pwp_evaporation_layer - temp_1 :
+                
+                return_evaporation = (pwp_evaporation_layer - temp_1) - evaporation
+                
+                evaporation = evaporation + return_evaporation
             
             current_swc_evaporation_layer = pwp_evaporation_layer
 
@@ -455,8 +458,12 @@ def waterSoilContent(
         
         elif temp_2 <= pwp_transpiration_layer:
 
-
-            transpiration = transpiration - (pwp_transpiration_layer - temp_2)
+            if transpiration > pwp_transpiration_layer - temp_2 :
+                
+                return_transpiration = (pwp_transpiration_layer - temp_2) - transpiration
+                
+                transpiration = transpiration + return_transpiration
+                
 
             irrigation_requirement = fc_transpiration_layer_for_deficit_irrigation - temp_2
 
@@ -564,8 +571,12 @@ def waterSoilContent(
             
         
         elif temp_1 <= pwp_evaporation_layer:
-
-            evaporation = evaporation - (pwp_evaporation_layer - temp_1)
+            
+            if evaporation > pwp_evaporation_layer - temp_1 :
+                
+                return_evaporation = (pwp_evaporation_layer - temp_1) - evaporation
+                
+                evaporation = evaporation + return_evaporation
             
             current_swc_evaporation_layer = pwp_evaporation_layer
             
